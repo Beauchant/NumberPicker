@@ -39,6 +39,7 @@ public class BirthDay extends AppCompatActivity {
                 "July", "August", "September", "October", "November", "December"};
         monthPicker.setMinValue(0);
         monthPicker.setMaxValue(11);
+        monthPicker.setValue(0);
         monthPicker.setDisplayedValues(months);
         monthPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
@@ -50,6 +51,7 @@ public class BirthDay extends AppCompatActivity {
         // Setup day picker
         dayPicker.setMinValue(1);
         dayPicker.setMaxValue(31);
+        dayPicker.setValue(15);
         dayPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
@@ -60,6 +62,7 @@ public class BirthDay extends AppCompatActivity {
         // Setup year picker
         yearPicker.setMinValue(1900);
         yearPicker.setMaxValue(2022);
+        yearPicker.setValue(2010);
         yearPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
@@ -71,6 +74,7 @@ public class BirthDay extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = "";
+
                 if(day == null || month == null || year == null){
                     text = "User's birthday: " + dayPicker.getValue() + " " + months[monthPicker.getValue()] + " " + yearPicker.getValue();
                     tvBirthDay.setText(text);
